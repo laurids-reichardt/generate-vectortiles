@@ -1,0 +1,9 @@
+{
+  "name": "generate-vectortiles",
+  "version": "1.0.0",
+  "dependencies": {
+    "@mapbox/tilelive": "6.0.0",
+    "mapnik": "4.0.2",
+    "@mapbox/tilelive-bridge": "3.0.0"
+  }
+}
