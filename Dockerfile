@@ -3,10 +3,6 @@ FROM node:8
 VOLUME /tm2source /export
 ENV SOURCE_PROJECT_DIR=/tm2source EXPORT_DIR=/export TILELIVE_BIN=tl
 
-COPY . /usr/src/app/
-WORKDIR /usr/src/app
-
-# RUN npm install
 RUN npm install --unsafe-perm -g \
   tl@0.10.2 \
   mapnik@4.0.2 \
@@ -16,5 +12,8 @@ RUN npm install --unsafe-perm -g \
   @mapbox/tilelive-vector@4.2.0 \
   @mapbox/tilelive-bridge@3.1.1 \
   @mapbox/tilelive-mapnik@1.0.0
+
+COPY . /usr/src/app/
+WORKDIR /usr/src/app
 
 CMD ["/usr/src/app/export-local.sh"]
